@@ -465,3 +465,8 @@ function closeCheckout()
 {
     window.location.href = "cart.html"
 }
+
+function goToStore()
+{
+    window.location.href = "index.html"
+}

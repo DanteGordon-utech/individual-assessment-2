@@ -600,7 +600,7 @@ a:hover{
     cursor: pointer;
 }
 
-#checkout-button{
+.checkout-button{
     padding: 6px 12px;
     font-size: 14px;
     background-color: var(--accent-color);
@@ -611,7 +611,7 @@ a:hover{
     /*transition: 0.25s ease-in-out;*/
 }
 
-#checkout-button-container{
+.checkout-button-container{
     display: flex;
     justify-content: center;
     align-items: center;
