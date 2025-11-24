@@ -202,11 +202,11 @@ document.addEventListener("DOMContentLoaded",function(event){
     }
 
 
-    /*if(!isLoggedIn() && (window.location.pathname  !== "/Codes/register.html" && window.location.pathname  !== "/Codes/login.html"))
+    if(!isLoggedIn() && (window.location.pathname  !== "/Codes/register.html" && window.location.pathname  !== "/Codes/login.html"))
     {
         console.log("Not logged in");
         window.location.href = "/Codes/login.html";
-    }*/
+    }
 
     if(document.title === 'Store')
         initStore();
