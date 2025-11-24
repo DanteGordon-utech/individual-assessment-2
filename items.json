@@ -1,0 +1,42 @@
+[
+    {
+        "name" : "sword",
+        "price" : 7500
+    },
+    {
+        "name" : "spear",
+        "price" : 10000
+    },
+    {
+        "name" : "shield",
+        "price" : 9000
+    },
+    {
+        "name" : "round shield",
+        "price" : 8000
+    },
+    {
+        "name" : "morning star",
+        "price" : 12000
+    },
+    {
+        "name" : "halbergerd",
+        "price" : 13000
+    },
+    {
+        "name" : "flail",
+        "price" : 10000
+    },
+     {
+        "name" : "bow",
+        "price" : 7000
+    },
+    {
+        "name" : "battle axe",
+        "price" : 7000
+    },
+    {
+        "name" : "arrow",
+        "price" : 3000
+    }
+]

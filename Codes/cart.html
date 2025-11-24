@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="icon" href="../Assets/logo.png">
+    <link rel="stylesheet" href="../style.css">
+    <script src="../script.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>Store</li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="list-container">
+            <div class="list-item hidden" id="template">
+                <img src="../Assets/logo.png">
+                <p>This is the item name</p>
+
+                <div class="controls">
+                    <button>remove</button>
+                    <input type="number">
+                </div>
+            </div>
+        </div>
+        <div id="checkout-button-container">
+            <button id="checkout-button" onclick="proceedToCheckout()">Proceed to checkout</button>
+        </div>
+    </main>
+    <footer>
+        <p>&copy;2025 <a href="#top">back to top</a></p>
+    </footer>
+</body>
+</html>
