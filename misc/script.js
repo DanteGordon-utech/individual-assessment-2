@@ -154,14 +154,6 @@ document.addEventListener("DOMContentLoaded",function(event){
         
 });
 
-document.addEventListener('keydown',function(event){
-    if(event.key === ' ')
-    {
-        event.preventDefault();
-        setLoggedIn('false');
-    }
-
-});
 
 /* Utils */
 function checkEmail(value)

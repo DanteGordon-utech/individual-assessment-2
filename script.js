@@ -235,6 +235,14 @@ document.addEventListener("DOMContentLoaded",function(event){
         });
     }
 
+        let logout = document.getElementById('logout');
+        if(logout !== null)
+        {
+            logout.addEventListener('click',(e)=>{
+                setLoggedIn('false');
+                window.location.href += '';
+            });
+        }
 
     if(!isLoggedIn() && (window.location.pathname  !== "/Codes/register.html" && window.location.pathname  !== "/Codes/login.html"))
     {
@@ -245,11 +253,6 @@ document.addEventListener("DOMContentLoaded",function(event){
     if(document.title === 'Store')
     {
         initStore();
-        let logout = document.getElementById('logout');
-        logout.addEventListener('click',(e)=>{
-            setLoggedIn('false');
-            window.location.href += '';
-        });
     }
 
     if(document.title === 'Cart')
