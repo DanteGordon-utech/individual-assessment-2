@@ -59,7 +59,10 @@ function populateCards(json)
         card.classList.add('card');
         img.src = "../Assets/products/" + item.name.toLowerCase() + ".jpg";
         productName.textContent = item.name;
-        productPrice.textContent = "$" + item.price;
+        productPrice.textContent = "$" + item.price.toLocaleString('en-US',{
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        }) + ' JMD';;
         button.textContent = "Add to cart"
         button.addEventListener("click",() => {
             addToCart(item.name,item.price);
@@ -156,7 +159,7 @@ function populateReceiptRows()
         div3.textContent = '$' + (item.quantity * item.price).toLocaleString('en-US',{
             minimumFractionDigits: 2,
             maximumFractionDigits: 2
-        }) + ' JMD'; + ' JMD';
+        }) + ' JMD';
         subTotalFloat += (item.quantity * item.price);
 
         receiptItemContainer.appendChild(receiptItem);
