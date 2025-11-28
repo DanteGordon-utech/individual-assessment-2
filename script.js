@@ -26,7 +26,8 @@ var accounts = []
 /* Init */
 function initStore()
 {
-    fetch("http://localhost:5500/items.json")
+    let url = window.location.origin + '/items.json';
+    fetch(url)
     .then(response => response.json())
     .then(data=> {
         const jsonString = JSON.stringify(data);
@@ -130,7 +131,9 @@ function populateReceiptRows()
         console.error("Cart is invalid!");
         return;
     }
-    let total = 0;
+    let totalFloat = 0;
+    let taxFloat = 0;
+    let subTotalFloat = 0;
     let receiptTemplate = document.getElementById("template");
     let receiptItemContainer  = document.getElementsByClassName("reciept-container")[0];
 
@@ -150,23 +153,54 @@ function populateReceiptRows()
         let div3 = receiptItem.getElementsByTagName("p")[2];
         console.log(item.quantity);
         console.log(item.price);
-        div3.textContent = '$' + (item.quantity * item.price) + ' JMD';
-        total += (item.quantity * item.price);
+        div3.textContent = '$' + (item.quantity * item.price).toLocaleString('en-US',{
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        }) + ' JMD'; + ' JMD';
+        subTotalFloat += (item.quantity * item.price);
 
         receiptItemContainer.appendChild(receiptItem);
     }
 
-    //Add total to the end
-    let receiptItem = receiptTemplate.cloneNode(true);
-    receiptItem.id = null;
-
-    let div1 = receiptItem.getElementsByTagName("p")[0];
-    div1.textContent = 'Total'
+    taxFloat = subTotalFloat * 0.15;
+    totalFloat = subTotalFloat + taxFloat;
     
-    let div3 = receiptItem.getElementsByTagName("p")[2];
-    div3.textContent = '$' + total + ' JMD';
-    receiptItemContainer.appendChild(receiptItem);
+    let total = receiptTemplate.cloneNode(true);
+    let subTotal = receiptTemplate.cloneNode(true);
+    let tax = receiptTemplate.cloneNode(true);
+    
+    subTotal.id = null;
+    tax.id = null;
+    total.id = null;
 
+    subTotal.getElementsByTagName("p")[0].textContent = 'Sub Total'
+    subTotal.getElementsByTagName("p")[2].textContent = '$' + 
+    subTotalFloat.toLocaleString('en-US',{
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    }) + ' JMD';
+
+    tax.getElementsByTagName("p")[0].textContent = 'Tax'
+    tax.getElementsByTagName("p")[2].textContent = '$' + 
+    taxFloat.toLocaleString('en-US',{
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    }) + ' JMD';
+
+    total.getElementsByTagName("p")[0].textContent = 'Total';
+    total.getElementsByTagName("p")[0].style.fontWeight = '800';
+    total.getElementsByTagName("p")[2].textContent = '$' + 
+    totalFloat.toLocaleString('en-US',{
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    }) + ' JMD';
+    total.getElementsByTagName("p")[2].style.fontWeight = '800';
+
+
+    receiptItemContainer.appendChild(subTotal);
+    receiptItemContainer.appendChild(tax);
+    receiptItemContainer.appendChild(total);
+        
 }
 
 function loadCart()
@@ -209,7 +243,14 @@ document.addEventListener("DOMContentLoaded",function(event){
     }
 
     if(document.title === 'Store')
+    {
         initStore();
+        let logout = document.getElementById('logout');
+        logout.addEventListener('click',(e)=>{
+            setLoggedIn('false');
+            window.location.href += '';
+        });
+    }
 
     if(document.title === 'Cart')
     {
@@ -261,7 +302,6 @@ function isLoggedIn()
 function setLoggedIn(loggedin)
 {
     localStorage.setItem("isLoggedin",loggedin);
-    alert("func called");
 }
 
 /* Login */
@@ -463,10 +503,25 @@ function proceedToCheckout()
 
 function closeCheckout()
 {
-    window.location.href = "cart.html"
+    window.location.href = "index.html"
 }
 
 function goToStore()
 {
     window.location.href = "index.html"
+}
+
+function clearCart()
+{
+    cart = []
+    saveCart();
+
+    window.location.href += '';
+}
+
+function checkout()
+{
+    alert('Thank you for your order');
+
+    clearCart();
 }

@@ -1,6 +1,7 @@
 :root{
-    --primary-color: #91A6FF;
+    --primary-color: #BFA6FF;
     --secondary-color: #0D1321;
+    --teritary-color: #A691FF;
     --contrast-color: #C9B79C;
     --negative-space: #FFFFFF;
     --accent-color: rgb(225, 32, 225);
@@ -37,13 +38,42 @@
 
 /* Header and Footer*/
 header{
-    background-color: var(--accent-color);
-    justify-content: space-around;
-    position: sticky;
-    z-index: 1000;
-    top:0px;
 
-    margin-bottom: 2px;
+}
+
+nav{
+    display: flex;
+    background-color: var(--teritary-color);
+    margin: 5px;
+    color: white;
+    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+
+    padding: 5px;
+}
+
+nav img{
+    width: 50px;
+    border-radius: 50%;
+}
+
+nav a{
+    color: white;
+}
+
+nav button{
+    color: white;
+    border: none;
+    background-color: var(--teritary-color);
+    border-radius: 100px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+nav button:hover{
+    background-color: var(--contrast-color);
+    
 }
 
 #logo{
@@ -51,26 +81,9 @@ header{
     height: 50px;
 }
 
-header nav{
-    display: flex;
-    justify-content: space-around;
-}
-
-header nav ul{
-    display: flex;
-    justify-content: space-around;
-}
-
-header nav ul li{
-    list-style: none;
-}
-
-header nav ul li a{
-    text-decoration: none;
-}
-
 footer{
-    background-color: var(--accent-color);
+    background-color: var(--teritary-color);
+    color: white;
     text-align: center;
 }
 
@@ -115,7 +128,7 @@ form{
 }
 
 .input-pair input:focus{
-    border: 2px solid var(--primary-color);
+    border: 2px solid var(--teritary-color);
 }
 
 /* Grid Container */
@@ -129,9 +142,9 @@ form{
 
 /* Cards*/
 .card-container{
-    border: 2px solid black;
     margin: 10px;
     padding: 10px;
+    border-radius: 0.5%;
 }
 
 .card{
@@ -159,7 +172,7 @@ form{
 }
 
 .card button{
-    background-color: var(--accent-color);
+    background-color: var(--teritary-color);
     color: var(--base-color);
 
     border:none;
@@ -186,7 +199,7 @@ form{
     flex-direction: column;*/
     position: relative;
 
-    border: 1px solid var(--accent-color);
+    border: 1px solid var(--teritary-color);
     margin: 20px;
 }
 
@@ -202,19 +215,23 @@ form{
 
 /* Shoping Cart icon */
 #top-bar{
+    border-bottom: 1px solid #0D1321;
     display: flex;
     justify-content: right;
     position: sticky;
     background-color: var(--negative-space);
 
-    top: 50px;
+    top: 0px;
     z-index: 999;
+
+    width: 98%;
+    left: 1%;
 }
 
 #shopping-cart-icon{
     position: relative;
 
-    width: 25px;
+    width: 30px;
     height: 50px;
 }
 
@@ -225,15 +242,15 @@ form{
 
 #shopping-cart-icon p{
     position: absolute;
-    background-color: var(--accent-color);
+    background-color: var(--teritary-color);
     color: var(--negative-space);
     border-radius: 50%;
 
-    top: 0px;
-    right: -2px;
+    top: 23px;
+    right: 0px;
 
-    width: 18px;
-    height: 18px;
+    width: 15px;
+    height: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -288,11 +305,15 @@ form{
 .signup-login{
     display: flex;
     min-height: 100vh;
-    background-image: url(../Assets/background.jpg);
+    background-image: url(../Assets/background.png);
     background-size: cover;
     background-position: left;
     overflow: hidden;
     justify-content:flex-end;
+}
+
+#big-logo{
+    height: 100px;
 }
 
 .page-wrapper{
@@ -327,7 +348,7 @@ form label{
     flex-shrink: 0;
     height: 50px;
     width:50px;
-    background-color: var(--accent-color);
+    background-color: var(--teritary-color);
     fill: var(--base-color);
     color: var(--base-color);
     border-radius: 10px 0 0 10px;
@@ -351,7 +372,7 @@ form input{
     transition: border-color 150ms ease;
 }
 form input:hover{
-    border-color: var(--accent-color);
+    border-color: var(--teritary-color);
 }
 form input:focus{
     outline: none;
@@ -368,7 +389,7 @@ form button{
     border: none;
     border-radius: 100px;
     padding: .85em 4em;
-    background-color: var(--accent-color);
+    background-color: var(--teritary-color);
     color: var(--base-color);
     font: inherit;
     font-weight: 600;
@@ -391,7 +412,7 @@ form div.incorrect input{
 
 a{
     text-decoration: none;
-    color: var(--accent-color);
+    color: var(--teritary-color);
 }
 a:hover{
     text-decoration: underline;
@@ -416,7 +437,7 @@ a:hover{
     width: 50%;
     padding: 6px 0;
     font-size: 14px;
-    background: var(--accent-color);
+    background: var(--teritary-color);
     color: var(--base-color);
     border: none;
     border-radius: 8px;
@@ -462,16 +483,22 @@ a:hover{
   grid-template-columns: 2fr 1fr 1fr;
   font-weight: bold;
   color: var(--text-color);
-  border-bottom: 2px solid var(--accent-color);
+  border-bottom: 2px solid var(--teritary-color);
   padding-bottom: 10px;
   margin-bottom: 10px;
+
+  width: 98%;
+}
+
+.reciept-header p:nth-child(3){
+    text-align: right;
 }
 
 .reciept-container {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  border: 1px solid var(--accent-color);
+  border: 1px solid var(--teritary-color);
 }
 
 .reciept-row {
@@ -482,6 +509,10 @@ a:hover{
   padding: 10px;
   color: var(--text-color);
   font-weight: 500;
+}
+
+.reciept-row p:nth-child(3){
+    text-align: right;
 }
 
 /* Form Section */
@@ -504,7 +535,7 @@ a:hover{
     display: inline-flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--accent-color); 
+  background-color: var(--teritary-color); 
   color: var(--base-color);             
   padding: 4px 10px;                     
   border-radius: 6px;                   
@@ -531,7 +562,7 @@ a:hover{
 
 .checkout-form input:focus {
   outline: none;
-  border-color: var(--primary-color);
+  border-color: var(--teritary-color);
 }
 
 .checkout-form button {
@@ -539,7 +570,7 @@ a:hover{
   margin: 5px;
   border: none;
   border-radius: 100px;
-  background-color: var(--accent-color);
+  background-color: var(--teritary-color);
   color: var(--base-color);
   font-weight: 600;
   text-transform: uppercase;
@@ -593,7 +624,7 @@ a:hover{
 
 .controls button{
     padding: 6px 12px;
-    background-color: var(--accent-color);
+    background-color: var(--teritary-color);
     color: var(--base-color);
     border: none;
     border-radius: 8px;
@@ -603,7 +634,7 @@ a:hover{
 .checkout-button{
     padding: 6px 12px;
     font-size: 14px;
-    background-color: var(--accent-color);
+    background-color: var(--teritary-color);
     color: var(--base-color);
     border: none;
     border-radius: 8px;
@@ -630,7 +661,7 @@ a:hover{
 .list-button {
     padding: 6px 12px;
     font-size: 14px;
-    background-color: var(--accent-color);
+    background-color: var(--teritary-color);
     color: var(--base-color);
     border: none;
     border-radius: 8px;

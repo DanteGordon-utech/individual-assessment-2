@@ -6,16 +6,26 @@
     <title>Checkout</title>
     <script src="../script.js"></script>
     <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="../Assets/logo.jpg">
 </head>
 <body>
+    <header>
+        <nav>
+           <a href="index.html"><img id="logo" src="../Assets/logo.jpg"/></a>
+            <h1>Dante's Medival Props</h1>
+            <a href="contact.html">Contact us</a>
+            <a href="about.html">About</a>
+            <button id="logout">Logout</button>
+        </nav>
+    </header>
     <main class="checkout-wrapper">
         <!-- Receipt Section -->
         <section id="reciept">
             <h2 class="section-title">Order Summary</h2>
             <div class="reciept-header">
-                <div>Item Name</div>
-                <div>Quantity</div>
-                <div>Subtotal</div>
+                <p>Item Name</p>
+                <p>Quantity</p>
+                <p>Subtotal</p>
             </div>
             <div class="reciept-container">
             <div class="reciept-row" id="template">
@@ -45,15 +55,14 @@
 
                 <div>
                     <button type="button" onclick="closeCheckout()">Close</button>
-                    <button type="button">Clear All</button>
-                    <button type="submit">Complete Purchase</button>
+                    <button type="button" onclick="clearCart()">Clear All</button>
+                    <button type="submit" onclick="checkout()">Complete Purchase</button>
                 </div>
-
             </form>
         </section>
     </main>
     <footer>
-
+        &copy;2025 Dante's Medieval Props. All rights reserved
     </footer>
 </body>
 </html>
